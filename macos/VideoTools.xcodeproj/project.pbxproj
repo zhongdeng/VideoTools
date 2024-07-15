@@ -11,6 +11,7 @@
 		514201522437B4B40078DB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514201512437B4B40078DB4F /* Assets.xcassets */; };
 		514201552437B4B40078DB4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514201532437B4B40078DB4F /* Main.storyboard */; };
 		514201582437B4B40078DB4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 514201572437B4B40078DB4F /* main.m */; };
+		BAF7D1042C42A9E9003B0730 /* RNPathSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF7D1032C42A9E9003B0730 /* RNPathSelector.m */; };
 		C2A841830EABFA8ED4D9AAC8 /* libPods-VideoTools-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C88A130C4E3DC7B00548F7F /* libPods-VideoTools-macOS.a */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,8 @@
 		514201592437B4B40078DB4F /* VideoTools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VideoTools.entitlements; sourceTree = "<group>"; };
 		5D95C3950E6D1C7D0B1A9493 /* Pods-VideoTools-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoTools-macOS.release.xcconfig"; path = "Target Support Files/Pods-VideoTools-macOS/Pods-VideoTools-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		70875C5719D92FB96C0AC248 /* Pods-VideoTools-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoTools-macOS.debug.xcconfig"; path = "Target Support Files/Pods-VideoTools-macOS/Pods-VideoTools-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		BAF7D1022C42A9E9003B0730 /* RNPathSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNPathSelector.h; sourceTree = "<group>"; };
+		BAF7D1032C42A9E9003B0730 /* RNPathSelector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNPathSelector.m; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -68,6 +71,8 @@
 				514201562437B4B40078DB4F /* Info.plist */,
 				514201572437B4B40078DB4F /* main.m */,
 				514201592437B4B40078DB4F /* VideoTools.entitlements */,
+				BAF7D1022C42A9E9003B0730 /* RNPathSelector.h */,
+				BAF7D1032C42A9E9003B0730 /* RNPathSelector.m */,
 			);
 			path = "VideoTools-macOS";
 			sourceTree = "<group>";
@@ -108,7 +113,6 @@
 				70875C5719D92FB96C0AC248 /* Pods-VideoTools-macOS.debug.xcconfig */,
 				5D95C3950E6D1C7D0B1A9493 /* Pods-VideoTools-macOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -297,6 +301,7 @@
 			files = (
 				514201582437B4B40078DB4F /* main.m in Sources */,
 				5142014D2437B4B30078DB4F /* AppDelegate.mm in Sources */,
+				BAF7D1042C42A9E9003B0730 /* RNPathSelector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,10 +465,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = false;
@@ -520,10 +522,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_CFLAGS = "$(inherited)";
 				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = false;

@@ -1,0 +1,21 @@
+// const fs = require('fs');
+// const path = require('path');
+
+const videoPath = process.argv[2];
+const compressedFilePath = process.argv[2];
+
+console.log(
+  `videoPath: ${videoPath}`,
+);
+console.log(
+  `compressedFilePath: ${compressedFilePath}`,
+);
+
+// const targetPath = path.resolve('/Users/dng/Desktop');
+
+// fs.stat(`${targetPath}/node.js`, (err, stats) => {
+//   if (err) {
+//     console.error(err);
+//   }
+//   console.log(argv2, stats.size);
+// });
