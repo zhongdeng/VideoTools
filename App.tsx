@@ -8,17 +8,13 @@ import {
   Image,
   NativeModules,
 } from 'react-native';
-import RNFS, {
-  DocumentDirectoryPath,
-  TemporaryDirectoryPath,
-} from 'react-native-fs';
+import RNFS, {TemporaryDirectoryPath} from 'react-native-fs';
 import {select} from './PathSelector';
 
 const App = () => {
   const [videoPath, setVodeoPath] = useState('');
-  const [compressedFilePath, setCompressedFilePath] = useState('');
+  const [targetPath, setTargetPath] = useState('');
   const [log, setLog] = useState('');
-  // const [logs, setLogs] = useState<string[]>([]);
 
   const handleVideoSelect = () => {
     select()
@@ -30,10 +26,10 @@ const App = () => {
       });
   };
 
-  const handleCompressedFileSelect = () => {
-    select()
+  const handleTargetPathSelect = () => {
+    select(false, true)
       .then((path: string) => {
-        setCompressedFilePath(path);
+        setTargetPath(path);
       })
       .catch((error: Error) => {
         console.log(error);
@@ -50,7 +46,7 @@ const App = () => {
         NativeModules.RNPathSelector.execute(
           toFile,
           videoPath,
-          compressedFilePath,
+          targetPath,
           (output: string) => {
             setLog(output);
           },
@@ -68,8 +64,8 @@ const App = () => {
         </View>
 
         <View>
-          <Button title="选择zip" onPress={handleCompressedFileSelect} />
-          <Text style={styles.content}>{compressedFilePath}</Text>
+          <Button title="选择目标路径" onPress={handleTargetPathSelect} />
+          <Text style={styles.content}>{targetPath}</Text>
         </View>
 
         <Button title="执行脚本" onPress={executeScript} />

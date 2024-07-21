@@ -44,14 +44,14 @@ RCT_EXPORT_METHOD(open:(NSDictionary *)option
 
 RCT_EXPORT_METHOD(execute:(NSString *)scriptPath
                 videoPath:(NSString *)videoPath
-       compressedFilePath:(NSString *)compressedFilePath
+               targetPath:(NSString *)targetPath
                  callback:(RCTResponseSenderBlock)callback)
 {
   NSString *nodePath = @"/Users/dng/.nvm/versions/node/v18.19.0/bin/node";
 
   NSTask *task = [[NSTask alloc] init];
   [task setLaunchPath:nodePath];
-  [task setArguments:@[scriptPath, videoPath, compressedFilePath]];
+  [task setArguments:@[scriptPath, videoPath, targetPath]];
 
   NSPipe *pipe = [NSPipe pipe];
   [task setStandardOutput:pipe];
